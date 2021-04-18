@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <h1>Edit Exercise Page</h1>
+    <!--  NOTE: the form is pre-populated with values for the server-->
+    <form action="/exercises/<%=exercise.id%>?_method=PUT" method="POST">
+        Name:
+        <input type="text" name="name" value="<%= exercise.name %>" /><br /><br />
+        Color:
+        <input type="text" name="color" value="<%= exercise.type %>" /><br /><br />
+        Is Accessible:
+        <input type="checkbox" name="isAccessible" <% if (exercise.isAccessible){ %>
+        checked
+        <% } %>
+            />
+            <br />
+            <br />
+            <input type="submit" name="" value="Submit Changes">
+    </form>
+</body>
+
+</html>

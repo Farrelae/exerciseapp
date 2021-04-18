@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <h1>Exercise show page</h1>
+    The <%= exercise.name %> is <%= exercise.type %>. <% if (exercise.isAccessible) { %>
+                It is Accessbile <% } else { %> It is not Accessible <% } %>
+
+                        <br />
+                        <br />
+
+                        <nav>
+                            <a href="/exercises">Back to Exercise Index</a>
+                        </nav>
+</body>
+
+</html>
