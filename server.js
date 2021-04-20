@@ -3,8 +3,22 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Exercise = require('./models/exercise.js');
-const morgan = require("morgan")
+const morgan = require('morgan');
 const indexRouter = require('./routes/index');
+const bcrypt = require("bcrypt")
+const session = require("express-session")
+const usersRouter = require('./routes/users');
+
+// ----------------------------------------------------------
+const SALT_ROUNDS = bcrypt.genSaltSync(10);
+const password = 'supersecretpassword';
+
+const hashedString = bcrypt.hashSync(password, SALT_ROUNDS); 
+
+const isMatch = bcrypt.compareSync('yourGuessHere', hashedString); //returns true or false and assigns value to isMatch
+
+
+
 
 mongoose.connect(
 	'mongodb+srv://farrelae:stevethefish@cluster0.mylta.mongodb.net/Project2?retryWrites=true&w=majority',
@@ -20,10 +34,22 @@ mongoose.connection.once('open', () => {
 });
 
 app.set('view engine', 'ejs');
-app.use(morgan("dev"))
-app.use(express.static("public"))
+app.use(morgan('dev'));
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use('/', indexRouter);
+
+
+app.use(
+	session({
+		secret: 'supersecret',
+		resave: false,
+		saveUninitialized: false,
+	})
+);
+
+
 
 // INDEX
 app.get('/exercises', (req, res) => {

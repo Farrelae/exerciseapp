@@ -2,31 +2,34 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/css/style.css' />
     <title></title>
 </head>
 
 <body>
     <nav>
-        <a href="/exercises/new">Create a new Exercise</a>
+        <a class="link" href="/exercises/new">Create a new Exercise</a>
     </nav>
-    <h1>Exercise index page</h1>
-  
+    <div class="home-Indextitle">
+    <h1>Exercise Index Page</h1>
+    </div>
     <ul>
         <% for (let i=0; i < exercises.length; i++){ %>
             <li>
-                You Added
+              <div class="Exercise-text">  You Added
                 <a href="/exercises/<%= exercises[i].id %>">
                     <%= exercises[i].name; %>
                 </a>
                 you chose this type: <%= exercises[i].type; %>
                     <% if (exercises[i].isAccessible === true){ %> It
                         is Accessible. <% } else { %> It is not Accessible. <% } %>
-
-                                <a href="/exercises/<%=exercises[i].id; %>/edit">Edit</a>
+              </div> 
+                                <a href="/exercises/<%=exercises[i].id; %>/edit"> <div class="Exercise-text">Edit</div></a>
 
                                 <form action="/exercises/<%= exercises[i].id %>?_method=DELETE" method="POST">
-                                    <input type="submit" value="DELETE" />
+                                    <input class="button" type="submit" value="DELETE" />
                                 </form>
             </li>
             <% } %>

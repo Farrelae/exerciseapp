@@ -2,20 +2,25 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/css/style.css' />
     <title></title>
 </head>
 
 <body>
+    <div class="home-title">
     <h1>Exercise show page</h1>
-    The <%= exercise.name %> is <%= exercise.type %>. <% if (exercise.isAccessible) { %>
-                It is Accessbile <% } else { %> It is not Accessible <% } %>
-
+    </div>
+    <div class="Exercise-show-text">
+    You chose <%= exercise.name %>. You are going to go <%= exercise.type %><% if (exercise.isAccessible) { %>
+                ...Can you do it? <% } else { %> It is not Accessible <% } %>
+    </div>
                         <br />
                         <br />
 
                         <nav>
-                            <a href="/exercises">Back to Exercise Index</a>
+                            <a class="index-back" href="/exercises">Back to Exercise Index</a>
                         </nav>
 </body>
 

@@ -2,26 +2,30 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='stylesheet' href='/css/style.css' />
     <title></title>
 </head>
 
 <body>
+    <div class="home-title">
     <h1>Edit Exercise Page</h1>
+    </div>
     <!--  NOTE: the form is pre-populated with values for the server-->
     <form action="/exercises/<%=exercise.id%>?_method=PUT" method="POST">
-        Name:
-        <input type="text" name="name" value="<%= exercise.name %>" /><br /><br />
-        Color:
-        <input type="text" name="color" value="<%= exercise.type %>" /><br /><br />
-        Is Accessible:
+        <div class="ex-header">Exercise:</div>
+        <input class="input-exercise" type="text" name="name" value="<%= exercise.name %>" /><br /><br />
+        <div class="type-header">Type:</div>
+        <input class="input-exercise" type="text" name="color" value="<%= exercise.type %>" /><br /><br />
+        <div class="check-header">Can You Do It?:</div>
         <input type="checkbox" name="isAccessible" <% if (exercise.isAccessible){ %>
         checked
         <% } %>
             />
             <br />
             <br />
-            <input type="submit" name="" value="Submit Changes">
+            <input class="button" type="submit" name="" value="Submit Changes">
     </form>
 </body>
 

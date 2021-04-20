@@ -2,28 +2,35 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>
-     
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Exercise App</title>
 </head>
 
 <body>
-    <ul>
-        <li>
-            <a href="#">Signup</a>
-        </li>
-        <li>
-            <a href="#">Login</a>
-        </li>
-    </ul>
-    <h1>New Exercise page</h1>
-    <form action="/exercises" method="POST">
-        Exercise: <input type="text" name="name" /><br />
-        Type: <input type="text" name="type" /><br />
-        Is Accessible: <input type="checkbox" name="isAccessible" /><br />
-        <input type="submit" name="" value="Create Exercise" />
-    </form>
+<div class="signup">
+    <a href="users/home.ejs">Signup</a>
+</div>
+     <br>  
+    <div class="login">
+    <a href="users/login.ejs">Login</a>
+    </div>
+<div class ="body">
+    <div class="home-title"> 
+    <h1>Exercise App</h1>
+    </div>
+    </div class="add-exercise">
+        </div class="add-exercise-nested">  
+            <form action="/exercises" method="POST">
+                <div class="ex-header">Exercise:</div> <input class="input-exercise" type="text" name="name" /><br />
+                <div class="type-header">Type:</div> <input class="input-type" type="text" name="type" /><br />
+                <div class="check-header">Can You Do It?:</div> <input class="input-accessible" type="checkbox" name="isAccessible" /><br />
+                <input class="button" type="submit" name="" value="Create Exercise" />
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
