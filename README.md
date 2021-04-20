@@ -28,8 +28,8 @@ ROUTES
 
 CHALLENGES
 
--difficulites of starting and creating an idea
-- had a little trouble with the routes
+- Had trouble coding the routes and mking the compatable with one another
+- Creativity
 
 
 TAKEAWAYS
