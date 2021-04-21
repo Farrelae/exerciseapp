@@ -25,6 +25,12 @@ TECHNOLOGIES USED
 ROUTES
 ![image](https://user-images.githubusercontent.com/78036860/115477556-2e9bb700-a212-11eb-9091-02bd432f544f.png)
 
+FURTURE IMPROVEMENTS
+
+-fix the athorization routes
+-add more styling
+-add more functionality with apis'
+
 
 CHALLENGES
 
